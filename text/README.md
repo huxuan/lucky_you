@@ -1,4 +1,4 @@
-# lucky_you/
+# lucky_you/text
 
 这里应该放置与相应人员照片文件名相同但后缀为txt的信息
 
