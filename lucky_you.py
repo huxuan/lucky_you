@@ -69,32 +69,38 @@ class MainWindow(wx.Frame):
 
     def forloop(self):
         """docstring for forloop"""
-        while True:
-            for item in os.listdir(DIR_PIC):
-                if not self.mark:
-                    return
-                if item == 'README.md':
-                    continue
-                time.sleep(TIME_SLEEP)
+        if os.path.isdir(DIR_PIC):
+            while True:
+                for item in os.listdir(DIR_PIC):
+                    if not self.mark:
+                        return
+                    if item == 'README.md':
+                        continue
+                    time.sleep(TIME_SLEEP)
 
-                path_pic = os.path.join(DIR_PIC, item)
-                img = img_scale(wx.Image(path_pic, wx.BITMAP_TYPE_ANY),
-                        WIDTH/2, WIDTH/3*2)
-                bitmap = wx.BitmapFromImage(img)
-                bitmap.SetSize((WIDTH/2, WIDTH/3*2))
+                    path_pic = os.path.join(DIR_PIC, item)
+                    img = img_scale(wx.Image(path_pic, wx.BITMAP_TYPE_ANY),
+                            WIDTH/2, WIDTH/3*2)
+                    bitmap = wx.BitmapFromImage(img)
+                    bitmap.SetSize((WIDTH/2, WIDTH/3*2))
 
-                text_name = item.split('.')[:-1]
-                text_name.append('txt')
-                text = text_name = '.'.join(text_name)
-                path_text = os.path.join(DIR_TEXT, text_name)
-                if os.path.exists(path_text) and os.path.isfile(path_text):
-                    file_text = file(path_text, 'r')
-                    text = file_text.read().strip()
-                    file_text.close()
+                    text_name = item.split('.')[:-1]
+                    text_name.append('txt')
+                    text = text_name = '.'.join(text_name)
+                    path_text = os.path.join(DIR_TEXT, text_name)
+                    if os.path.exists(path_text) and os.path.isfile(path_text):
+                        file_text = file(path_text, 'r')
+                        text = file_text.read().strip()
+                        file_text.close()
 
-                wx.CallAfter(self.static_bitmap.SetBitmap, bitmap)
-                wx.CallAfter(self.static_text.SetLabel, text)
-                wx.CallAfter(self.static_text.Wrap, WIDTH/2)
+                    wx.CallAfter(self.static_bitmap.SetBitmap, bitmap)
+                    wx.CallAfter(self.static_text.SetLabel, text)
+                    wx.CallAfter(self.static_text.Wrap, WIDTH/2)
+        else:
+            msg_dialog = wx.MessageDialog(self, u"No pic Directory Found!", "Error", wx.OK)
+            msg_dialog.ShowModal()
+            msg_dialog.Destroy()
+            self.Destroy()
 
     def stop(self, event=None):
         """docstring for stop"""
