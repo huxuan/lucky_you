@@ -19,7 +19,7 @@
 ## About exe for windows
 
 - 用py2exe打包的exe版本，可以在无python和wxpython的环境中使用
-- 下载地址：https://github.com/huxuan/luckyi\_you/downloads
+- 下载地址：https://github.com/huxuan/lucky_you/downloads
 - 文件名示例：lucky\_you\_[版本号].zip
 - 运行可能导致杀毒软件报毒，请添加白名单放心使用
 - 压缩包中包含的w9xpopen.exe和python27.dll均为依赖文件
