@@ -24,9 +24,9 @@ setup(
                 "optimize" : 2,
                 "bundle_files" : 2,
                 "dll_excludes" : [ "MSVCP90.dll" ] }},
-        windows = ["lucky-you.py"],
+        windows = ["lucky_you.py"],
         zipfile = None,
         author = "Hu Xuan",
         author_email ="i@huxuan.org",
-        url = "http://github.com/huxuan/luck-you/",
+        url = "http://github.com/huxuan/luck_you/",
       )
