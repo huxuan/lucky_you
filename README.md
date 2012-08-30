@@ -2,7 +2,7 @@
 
 一个简单的点名/抽奖程序 based on wxpython
 
-# Dependence
+## Dependence
 
 - wxpython (http://wxpython.org/)
 
@@ -19,7 +19,11 @@
 ## About exe for windows
 
 - 用py2exe打包的exe版本，可以在无python和wxpython的环境中使用
+- 下载地址：https://github.com/huxuan/luckyi\_you/downloads
+- 文件名示例：lucky\_you\_[版本号].zip
 - 运行可能导致杀毒软件报毒，请添加白名单放心使用
+- 压缩包中包含的w9xpopen.exe和python27.dll均为依赖文件
+- 将对应的图片和文本放到pic和text文件夹下后，双击运行lucky\_you.exe即可
 - 可以放置在任意的文件夹中，把luck\_you.exe的快捷方式放到桌面上使用
   （无需移动pic和text文件夹）
 
