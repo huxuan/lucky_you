@@ -33,6 +33,7 @@ class MainWindow(wx.Frame):
 
         wx.Frame.__init__(self, parent, title=title, size=(WIDTH, -1))
         self.SetBackgroundColour('white')
+        self.SetFocus()
         main_sizer = wx.FlexGridSizer(cols=2, vgap=2, hgap=2)
 
         self.static_text = wx.StaticText(self, label=u'Lucky You.',
