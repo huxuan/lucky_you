@@ -60,9 +60,10 @@ class MainWindow(wx.Frame):
 
     def start(self, event):
         """docstring for start"""
-        self.mark = 1
-        thread = threading.Thread(target=self.forloop)
-        thread.start()
+        if self.mark == 0:
+            self.mark = 1
+            thread = threading.Thread(target=self.forloop)
+            thread.start()
 
     def forloop(self):
         """docstring for forloop"""
