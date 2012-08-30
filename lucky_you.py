@@ -47,7 +47,7 @@ class MainWindow(wx.Frame):
         button_start = wx.Button(self, label=u'Start')
         button_stop = wx.Button(self, label=u'Stop')
 
-        main_sizer.Add(self.static_text, flag=wx.ALIGN_CENTER)
+        main_sizer.Add(self.static_text, flag=wx.ALIGN_CENTER|wx.EXPAND)
         main_sizer.Add(self.static_bitmap, flag=wx.ALIGN_CENTER)
         main_sizer.Add(button_start, flag=wx.ALIGN_RIGHT)
         main_sizer.Add(button_stop, flag=wx.ALIGN_LEFT)
