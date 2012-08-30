@@ -71,6 +71,8 @@ class MainWindow(wx.Frame):
             for item in os.listdir(DIR_PIC):
                 if not self.mark:
                     return
+                if item == 'README.md':
+                    continue
                 time.sleep(TIME_SLEEP)
 
                 path_pic = os.path.join(DIR_PIC, item)
