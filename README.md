@@ -2,6 +2,10 @@
 
 一个简单的点名/抽奖程序 based on wxpython
 
+# Dependence
+
+- wxpython (http://wxpython.org/)
+
 ## Usage
 
 - 在pic文件夹下放置相应人员的照片，推荐使用jpg格式
@@ -9,10 +13,8 @@
 
 ## Example
 
-- pic/1.jpg
-- pic/2.jpg
-- text/1.txt
-- text/2.txt
+- pic/1.jpg <--> text/1.txt
+- pic/2.jpg <--> text/2.txt
 
 ## About exe for windows
 
