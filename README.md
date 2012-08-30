@@ -14,9 +14,10 @@
 - text/1.txt
 - text/2.txt
 
-# About exe for windows
+## About exe for windows
 
 - 用py2exe打包的exe版本，可以在无python和wxpython的环境中使用
 - 运行可能导致杀毒软件报毒，请添加白名单放心使用
 - 可以放置在任意的文件夹中，把luck\_you.exe的快捷方式放到桌面上使用
+
   （无需移动pic和text文件夹）
