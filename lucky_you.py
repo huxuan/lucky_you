@@ -36,7 +36,7 @@ class MainWindow(wx.Frame):
         main_sizer = wx.FlexGridSizer(cols=2, vgap=2, hgap=2)
 
         self.static_text = wx.StaticText(self, label=u'Lucky You.',
-                size=(WIDTH/2,-1),
+                size=(WIDTH/2, -1),
                 style=wx.ALIGN_CENTER|wx.ST_NO_AUTORESIZE)
         font = wx.Font(24, wx.FONTFAMILY_DEFAULT, wx.NORMAL, wx.NORMAL)
         self.static_text.SetFont(font)
