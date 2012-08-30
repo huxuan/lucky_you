@@ -58,7 +58,6 @@ class MainWindow(wx.Frame):
         self.Bind(wx.EVT_KEY_UP, self.onKeyUp)
 
         self.SetSizerAndFit(main_sizer)
-        #self.Show(True)
 
     def start(self, event=None):
         """docstring for start"""
