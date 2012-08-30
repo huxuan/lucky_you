@@ -4,8 +4,8 @@
 # | File: setup.py
 # | Author: huxuan
 # | E-mail: i(at)huxuan.org
-# | Created: 2012-03-09
-# | Last modified: 2012-03-09
+# | Created: 2012-08-30
+# | Last modified: 2012-08-30
 # | Description:
 # |     setup.py file of py2exe which will create exe file for win
 # |
@@ -18,7 +18,7 @@ import py2exe
 setup(
         name = "Lucky You",
         version = "1.0",
-        options = { 
+        options = {
             "py2exe" : {
                 "compressed" : 1,
                 "optimize" : 2,
