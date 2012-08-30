@@ -55,10 +55,12 @@ class MainWindow(wx.Frame):
         self.Bind(wx.EVT_BUTTON, self.start, button_start)
         self.Bind(wx.EVT_BUTTON, self.stop, button_stop)
 
+        self.Bind(wx.EVT_KEY_UP, self.onKeyUp)
+
         self.SetSizerAndFit(main_sizer)
         #self.Show(True)
 
-    def start(self, event):
+    def start(self, event=None):
         """docstring for start"""
         if self.mark == 0:
             self.mark = 1
@@ -94,9 +96,17 @@ class MainWindow(wx.Frame):
                 wx.CallAfter(self.static_text.SetLabel, text)
                 wx.CallAfter(self.static_text.Wrap, WIDTH/2)
 
-    def stop(self, event):
+    def stop(self, event=None):
         """docstring for stop"""
         self.mark = 0
+
+    def onKeyUp(self, event):
+        """docstring for onKeyUp"""
+        if event.GetKeyCode() == wx.WXK_SPACE:
+            if self.mark == 0:
+                self.start()
+            else:
+                self.stop()
 
 def img_scale(img, width, height):
     """docstring for img_scale"""
