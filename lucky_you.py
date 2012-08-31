@@ -85,8 +85,9 @@ class MainWindow(wx.Frame):
                     bitmap.SetSize((WIDTH/2, WIDTH/3*2))
 
                     text_name = item.split('.')[:-1]
+                    text = '.'.join(text_name)
                     text_name.append('txt')
-                    text = text_name = '.'.join(text_name)
+                    text_name = '.'.join(text_name)
                     path_text = os.path.join(DIR_TEXT, text_name)
                     if os.path.exists(path_text) and os.path.isfile(path_text):
                         file_text = file(path_text, 'r')
