@@ -66,6 +66,7 @@ class MainWindow(wx.Frame):
             self.mark = 1
             thread = threading.Thread(target=self.forloop)
             thread.start()
+        self.SetFocus()
 
     def forloop(self):
         """docstring for forloop"""
@@ -106,6 +107,7 @@ class MainWindow(wx.Frame):
     def stop(self, event=None):
         """docstring for stop"""
         self.mark = 0
+        self.SetFocus()
 
     def onKeyUp(self, event):
         """docstring for onKeyUp"""
