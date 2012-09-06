@@ -6,6 +6,10 @@
 
 - wxpython (http://wxpython.org/)
 
+```
+pip install -r requirements.txt
+```
+
 ## Usage
 
 - 在pic文件夹下放置相应人员的照片，推荐使用jpg格式
