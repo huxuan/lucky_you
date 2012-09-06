@@ -20,7 +20,7 @@ import threading
 
 import wx
 
-WIDTH = 400
+WIDTH = 500
 TIME_SLEEP = 1/20
 
 DIR_PIC = 'pic'
@@ -104,7 +104,7 @@ class MainWindow(wx.Frame):
                         file_text.close()
 
                     wx.CallAfter(self.static_bitmap.SetBitmap, bitmap)
-                    wx.CallAfter(self.static_text.SetLabel, text)
+                    wx.CallAfter(self.static_text.SetLabel, text.decode('utf8'))
                     wx.CallAfter(self.static_text.Wrap, WIDTH/2)
                     
                     if not self.mark:
