@@ -15,14 +15,19 @@ License GPLv3
 
 import os
 import time
+import datetime
 import threading
 
 import wx
 
 WIDTH = 400
 TIME_SLEEP = 1/20
+
 DIR_PIC = 'pic'
 DIR_TEXT = 'text'
+DIR_LOG = 'log'
+
+RESULT_SET = set([])
 
 class MainWindow(wx.Frame):
     """Summary of MainWindow
@@ -60,6 +65,11 @@ class MainWindow(wx.Frame):
 
         self.SetSizerAndFit(main_sizer)
 
+        if not os.path.exists(DIR_LOG):
+            os.makedirs(DIR_LOG)
+        date = datetime.datetime.now().strftime('%Y%m%d')
+        self.log_file_path = os.path.join(DIR_LOG, '%s.log' % date)
+
     def start(self, event=None):
         """docstring for start"""
         if self.mark == 0:
@@ -73,9 +83,7 @@ class MainWindow(wx.Frame):
         if os.path.isdir(DIR_PIC):
             while True:
                 for item in os.listdir(DIR_PIC):
-                    if not self.mark:
-                        return
-                    if item == 'README.md':
+                    if item == 'README.md' or item in RESULT_SET:
                         continue
                     time.sleep(TIME_SLEEP)
 
@@ -98,6 +106,14 @@ class MainWindow(wx.Frame):
                     wx.CallAfter(self.static_bitmap.SetBitmap, bitmap)
                     wx.CallAfter(self.static_text.SetLabel, text)
                     wx.CallAfter(self.static_text.Wrap, WIDTH/2)
+                    
+                    if not self.mark:
+                        log_file = file(self.log_file_path, 'a')
+                        print >>log_file, text
+                        print >>log_file
+                        log_file.close()
+                        RESULT_SET.add(item)
+                        return
         else:
             msg_dialog = wx.MessageDialog(self, u"No pic Directory Found!", "Error", wx.OK)
             msg_dialog.ShowModal()
