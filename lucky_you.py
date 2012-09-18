@@ -21,7 +21,7 @@ import threading
 import wx
 
 WIDTH = 500
-TIME_SLEEP = 1/20
+TIME_SLEEP = 1.0/20
 
 DIR_PIC = 'pic'
 DIR_TEXT = 'text'
