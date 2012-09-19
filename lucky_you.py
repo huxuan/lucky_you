@@ -17,6 +17,7 @@ import os
 import time
 import datetime
 import threading
+import random
 
 import wx
 
@@ -35,6 +36,7 @@ class MainWindow(wx.Frame):
     def __init__(self, parent=None, title=None):
         """Init MainWindow"""
         self.mark = 0
+        random.seed(time.time())
 
         wx.Frame.__init__(self, parent, title=title, size=(WIDTH, -1))
         self.SetBackgroundColour('white')
@@ -81,9 +83,12 @@ class MainWindow(wx.Frame):
     def forloop(self):
         """docstring for forloop"""
         if os.path.isdir(DIR_PIC):
+            files = os.listdir(DIR_PIC)
+            files = list(set(files).difference(set(['README.md'])))
+            random.shuffle(files)
             while True:
-                for item in os.listdir(DIR_PIC):
-                    if item == 'README.md' or item in RESULT_SET:
+                for item in files:
+                    if item in RESULT_SET:
                         continue
                     time.sleep(TIME_SLEEP)
 
