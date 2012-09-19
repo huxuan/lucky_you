@@ -111,7 +111,7 @@ class MainWindow(wx.Frame):
                     wx.CallAfter(self.static_bitmap.SetBitmap, bitmap)
                     wx.CallAfter(self.static_text.SetLabel, text.decode('utf8'))
                     wx.CallAfter(self.static_text.Wrap, WIDTH/2)
-                    
+
                     if not self.mark:
                         log_file = file(self.log_file_path, 'a')
                         print >>log_file, text
