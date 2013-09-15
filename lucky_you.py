@@ -28,7 +28,7 @@ DIR_PIC = 'pic'
 DIR_TEXT = 'text'
 DIR_LOG = 'log'
 
-RESULT_SET = set([])
+RESULT_SET = set(['Thumbs.db'])
 
 class MainWindow(wx.Frame):
     """Summary of MainWindow
