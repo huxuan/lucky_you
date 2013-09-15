@@ -108,13 +108,19 @@ class MainWindow(wx.Frame):
                         text = file_text.read().strip()
                         file_text.close()
 
+                    # Decode the text whether in gbk or utf8
+                    try:
+                        text = text.decode('gbk')
+                    except:
+                        text = text.decode('utf8')
+
                     wx.CallAfter(self.static_bitmap.SetBitmap, bitmap)
-                    wx.CallAfter(self.static_text.SetLabel, text.decode('utf8'))
+                    wx.CallAfter(self.static_text.SetLabel, text)
                     wx.CallAfter(self.static_text.Wrap, WIDTH/2)
 
                     if not self.mark:
                         log_file = file(self.log_file_path, 'a')
-                        print >>log_file, text
+                        print >>log_file, text.encode('utf8')
                         print >>log_file
                         log_file.close()
                         RESULT_SET.add(item)
