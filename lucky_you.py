@@ -28,7 +28,8 @@ DIR_PIC = 'pic'
 DIR_TEXT = 'text'
 DIR_LOG = 'log'
 
-RESULT_SET = set(['Thumbs.db'])
+RESULT_SET = set([])
+FILTER_SET = set(['README.md', 'Thumbs.db'])
 
 class MainWindow(wx.Frame):
     """Summary of MainWindow
@@ -84,7 +85,7 @@ class MainWindow(wx.Frame):
         """docstring for forloop"""
         if os.path.isdir(DIR_PIC):
             files = os.listdir(DIR_PIC)
-            files = list(set(files).difference(set(['README.md'])))
+            files = list(set(files).difference(FILTER_SET))
             random.shuffle(files)
             while True:
                 for item in files:
